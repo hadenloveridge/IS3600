@@ -1,0 +1,294 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Small Single-Column Layout */
+
+body {
+	background-color: #91633a;
+	color: black;
+	font-family: 'Courier New', Courier, monospace;
+	margin: 0
+}
+
+#wrapper {
+	background-color: #4d566a;
+	padding: 0;
+}
+
+header {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	height: 120px;
+	background-color: black;
+	color: #cbc4a9;
+    font-family: cursive, monospace;
+	text-align: center;
+}
+
+header a {
+	text-decoration: none;
+}
+
+header a:link {
+	color: #cbc4a9;
+}
+
+header a:visited {
+	color: #b28253;
+}
+
+header a:hover {
+	color: linen;
+}
+
+h1 {
+	font-size: 2em;
+	font-family:cursive, monospace;
+	color: #cbc4a9;
+}
+
+h2 {
+	color: #4d566a;
+	font-family: Apple Chancery, cursive;
+	font-size: 1.5em;
+}
+
+h3 {
+	color: #91633a;
+}
+
+h4 {
+	
+    color: #4d566a;
+	font-size: 1.2em;
+	padding-left: .5em;
+	padding-bottom: 0;
+	clear: left;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+.gallery {
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: #faf9f7;
+	margin: 2em;
+	padding: .5em;
+	
+}
+
+img {
+	padding-left: 5px;
+	padding-right: 5px;
+	border-style: none;
+	max-width: 100%;
+	height: auto;
+}
+
+#indexPic {
+	height: 300px;
+	width: 100%;
+	background-image: url("images/PaintedShakesAndPorch.jpeg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.contact {
+	font-family: "Times New Roman", serif;
+	font-size: .90em;
+	font-weight: bold;
+}
+
+nav {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+nav a:link {
+	color: #cbc4a9;
+}
+
+nav a:visited {
+	color: #ffe389;
+}
+
+nav a:hover {
+	color: linen;
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+
+nav li {
+	border-bottom: 1px solid #fef6c2;
+}
+
+nav li a {
+	display: flex;
+	flex-direction: column;
+	padding: .5em 1em;
+}
+
+main {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 2em;
+	padding-top: 0;
+	display: block;
+	background-color: #cbc4a9;
+}
+
+h2,
+h3,
+h4,
+p,
+div,
+ul,
+dl {
+	padding-left: .75em;
+	padding-right: .75em;
+}
+
+main ul {
+	padding-left: 2em;
+}
+
+#mobile {
+	display: inline;
+}
+
+#desktop {
+	display: none;
+}
+
+footer {
+	font-size: .60em;
+	font-style: italic;
+	text-align: center;
+	padding: 1em;
+	border-top: 2px solid #b28253;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding-left: 1em;
+	width: 90%;
+}
+
+input,
+textarea {
+	margin-bottom: .25em;
+}
+
+.current {
+	text-decoration-line: underline;
+	background-color: black;
+}
+
+/* Medium Layout */
+
+@media (min-width: 600px) {
+
+	header {
+		text-align: center;
+		padding-left: 0;
+	}
+
+	h1 {
+		font-size: 3em;
+	}
+
+	nav ul {
+		flex-flow: row nowrap;
+		justify-content: space-around;
+	}
+
+	nav li {
+		border-bottom: none;
+	}
+
+	#indexPic {
+		height: 50vh;
+		background-image: url("images/PaintedShakesAndPorch.jpeg");
+	}
+
+	#flow {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#mobile {
+		display: none;
+	}
+
+	#desktop {
+		display: inline;
+	}
+
+	.details {
+		display: flex;
+		flex-direction: row;
+	}
+
+	h4 {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	h5 {
+		font-size: 1.25em;
+	}
+	
+}
+
+/* Large Layout Config. */
+
+@media (min-width: 1024px) {
+
+	@supports (display: grid) {
+		header {
+			grid-area: header;
+		}
+
+		nav {
+			grid-area: nav;
+		}
+
+		main {
+			grid-area: main;
+		}
+
+		footer {
+			grid-area: footer;
+		}
+
+		#wrapper {
+			display: grid;
+			grid-template:
+				"header header"
+				"nav main"
+				"footer footer"
+				/ 200px;
+		}
+
+		nav ul {
+			flex-direction: column;
+		}
+
+	}
+}
